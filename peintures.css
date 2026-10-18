@@ -31,6 +31,19 @@ dialog img{width:auto;height:auto;max-width:100%;max-height:78vh;margin:0 auto}
 
 /* Fond propre à la page Peintures : modifie seulement la ligne --fond-peintures */
 body{
-  --fond: linear-gradient(166deg, rgba(250, 250, 250, 1) 0%, rgb(204 236 255) 30%, rgb(43 43 47) 65%);
+  --fond: linear-gradient(180deg, rgba(250, 250, 250, 1) 0%, rgb(204 236 255) 52%, rgb(43 43 47) 60%);
   /* background:var(--fond-peintures); */
 }
+
+body{overflow-x:clip}
+.passage{--hauteur-passage:520px;position:relative;display:grid;place-items:center;width:100vw;margin-left:calc(50% - 50vw);height:var(--hauteur-passage);margin-bottom: -100px;}
+.brume{position:absolute;inset:0;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 30%,#000 60%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 30%,#000 60%,transparent 100%)}
+.brume i{position:absolute;left:0;right:0;bottom:var(--b);height:var(--h);background-repeat:repeat-x;background-size:var(--w) 100%;animation:derive var(--d) linear infinite}
+@keyframes derive{from{background-position-x:0}to{background-position-x:calc(var(--w) * -1)}}
+.brume i:nth-child(1){--w:1100px;--h:245px;--b:110px;--d:40s;opacity:.22;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='160' viewBox='0 0 720 160'%3E%3Cpath fill='white' d='M0 50q180-40 360 0t360 0V120q-180-40-360 0t-360 0z'/%3E%3C/svg%3E")}
+.brume i:nth-child(2){--w:760px;--h:222px;--b:190px;--d:55s;opacity:.16;animation-direction:reverse;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='140' viewBox='0 0 480 140'%3E%3Cpath fill='white' d='M0 45q120-35 240 0t240 0V105q-120-35-240 0t-240 0z'/%3E%3C/svg%3E")}
+.brume i:nth-child(3){--w:1800px;--h:260px;--b:240px;--d:80s;opacity:.1;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='180' viewBox='0 0 1440 180'%3E%3Cpath fill='white' d='M0 55q360-45 720 0t720 0V130q-360-45-720 0t-720 0z'/%3E%3C/svg%3E")}
+.brume i{left:-40px;right:-40px;filter:blur(0px)}
+.passage a{position:relative;z-index:1;padding:.4rem 1rem;color:#fff;font:500 1.25rem var(--serif);letter-spacing:.02em;text-decoration:none;text-shadow:0 1px 12px rgba(10,16,24,.45);border-bottom:1px solid rgba(255,255,255,.5)}
+.passage a:hover{color:#fff;border-bottom-color:#fff}
+@media (prefers-reduced-motion:reduce){.brume i{animation:none}}
