@@ -1,0 +1,36 @@
+/* Styles propres à la page Peintures (s'ajoute à style.css) */
+.page{padding:4rem clamp(1rem,5vw,4rem) 3rem;max-width:1200px;width:100%;margin:0 auto;}
+.page h1{font:600 clamp(2.4rem,6vw,4rem)/1.05 var(--serif);margin:0 0 .8rem;letter-spacing:-.02em;background:-webkit-linear-gradient(300deg,#ffe7a9 0%,#c9981b 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;width:fit-content}
+.page .chapeau{color:var(--discret);margin:0;max-width:40em}
+
+.index-series{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:2rem 0 1rem}
+.index-series a{display:block;padding:1.4rem 1.6rem;border-radius:20px;background:#fff;text-decoration:none;transition:.2s all ease}
+.index-series a:hover{background:#94bdcd}
+.index-series strong{display:block;font:600 1.3rem/1.2 var(--serif);color:var(--texte)}
+.index-series span{display:block;color:var(--discret);font-size:.95rem;margin-top:.2rem}
+.index-series em{display:block;margin-top:.5rem;font-style:normal;font-weight:600;color:var(--texte)}
+
+.serie{padding-top:3rem}
+.serie h2{font:600 clamp(1.8rem,4vw,2.4rem)/1.1 var(--serif);margin:0 0 .4rem;background:-webkit-linear-gradient(300deg,#ffe7a9 0%,#c9981b 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;width:fit-content}
+.serie .intro{color:var(--discret);margin:0 0 1.6rem}
+.serie .grille .tuile .visuel{border-radius:16px}
+.tuile:hover .visuel{outline:2px solid var(--texte);outline-offset:2px}
+.retour{display:inline-block;margin-top:.6rem;color:var(--discret)}
+.retour:hover{color:var(--texte)}
+
+/* Cadres adaptés au ratio des images (colonnes en « mosaïque ») */
+.serie .tuile .visuel{aspect-ratio:auto;background:none}
+.serie .tuile .visuel img{height:auto;object-fit:contain}
+/* Tuiles sans image (placeholders) : on garde un cadre avec un ratio et le dégradé */
+.serie .tuile .visuel:empty{aspect-ratio:var(--ratio,4/5);background:var(--degrade)}
+
+/* Lightbox : le cadre épouse l'image, quel que soit son format */
+dialog .cadre{width:fit-content;max-width:min(90vw,900px);max-height:none;background:none}
+dialog .cadre:empty{width:min(80vw,640px);max-height:75vh;background:var(--degrade)}
+dialog img{width:auto;height:auto;max-width:100%;max-height:78vh;margin:0 auto}
+
+/* Fond propre à la page Peintures : modifie seulement la ligne --fond-peintures */
+body{
+  --fond: linear-gradient(166deg, rgba(250, 250, 250, 1) 0%, rgb(204 236 255) 30%, rgb(43 43 47) 65%);
+  /* background:var(--fond-peintures); */
+}
