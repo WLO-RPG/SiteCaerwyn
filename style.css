@@ -1,8 +1,10 @@
 :root {
   --fond: linear-gradient(166deg, rgba(250, 250, 250, 1) 0%, rgb(204 236 255) 75%);
-  --fond-2: #223329;
+  --fond-2: #2b2b2f;
   --mousse: #4f7a5c;
   --or: #ffffff;
+  --annwnor: #9d7f25;
+  --annwngris: #939393;
   --titre: linear-gradient(166deg, rgba(203, 155, 203, 1) 0%, rgba(163, 104, 163, 1) 100%);
   --texte: #FFCC33;
   --discret: #668899;
@@ -153,6 +155,7 @@ section.bloc>p.intro{color:var(--discret);margin:0 0 2rem;max-width:40em}
 .tuile .visuel{display:block;width:100%;aspect-ratio:var(--ratio,4/5);border-radius:3px;background:var(--degrade);overflow:hidden}
 .tuile img{display:block;width:100%;height:100%;object-fit:cover}
 .tuile .legende{display:block;padding: 0px 0px 10px;color:var(--discret);font-size:.95rem}
+.legendeannwn{display:block;padding: 0px 0px 10px;color:var(--annwnor);font-size:.95rem;}
 .tuile:hover .visuel{outline:1px solid var(--or)}
 .tuile:nth-child(3n+1){--ratio:4/5}
 .tuile:nth-child(3n+2){--ratio:1/1}
@@ -164,12 +167,12 @@ section.bloc>p.intro{color:var(--discret);margin:0 0 2rem;max-width:40em}
 .sections strong{display:block;font:600 1.3rem var(--serif);margin-bottom:.3rem}
 .sections span{color:var(--discret);font-size:.98rem}
 
-dialog{max-width:min(92vw,1000px);max-height:92vh;padding:0;border:0;background:var(--fond-2);color:var(--texte)}
-dialog::backdrop{background:rgba(10,16,13,.88)}
+dialog{max-width:min(92vw,1000px);max-height:92vh;padding:0;border:0;background:var(--fond-2);color:var(--texte);border-radius: 0px 0px 20px 20px;}
+dialog::backdrop{background:rgb(18 16 16 / 88%)}
 dialog .cadre{width:min(80vw,640px);aspect-ratio:4/5;max-height:75vh;background:var(--degrade)}
 dialog img{display:block;max-width:100%;max-height:80vh;margin:auto}
 dialog .barre{display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:.8rem 1rem}
-dialog button{background:none;border:1px solid var(--discret);color:var(--texte);padding:.3rem .9rem;cursor:pointer;font:inherit}
+dialog button{background:none;border:1px solid #555555;color:var(--texte);padding:.3rem .9rem;cursor:pointer;font:inherit;border-radius: 20px;}
 
 footer{padding:2.5rem clamp(1rem,5vw,4rem);color:var(--discret);font-size:.92rem;border-top:1px solid var(--discret)}
 
