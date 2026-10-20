@@ -86,7 +86,7 @@ nav a[aria-current="page"] {
 }
 
 .hero h1 {
-  font: 600 clamp(2.6rem, 7vw, 5.2rem)/1.02 var(--serif);
+  font: 600 clamp(2.6rem, 7vw, 5.2rem)/1.2 var(--serif);
   margin: 0 0 1.2rem;
   letter-spacing: -.02em;
   background: -webkit-linear-gradient(300deg, #ffe7a9 0%, #c9981b 100%);
@@ -299,6 +299,32 @@ dialog .barre {
   gap: 1rem;
   align-items: center;
   padding: .8rem 1rem
+}
+
+/* Style du data-bis dans la modale */
+#bis {
+  color: var(--annwngris);
+  /* Changez la couleur (ex: var(--annwnor), #ffe7a9, etc.) */
+  margin-top: 4px;
+  font-size: 0.85rem;
+  /* Espacement par rapport au titre */
+  text-align: right;
+  /* Aligné à gauche, à droite ou au centre */
+}
+
+#titre {
+  font: 600 clamp(1.5rem, 4vw, 0.4rem) / 1.5 var(--serif);
+  background: -webkit-linear-gradient(300deg, #ffe7a9 0%, #c9981b 100% 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Place le titre et le data-bis côte à côte */
+dialog .barre>div {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  /* Écart entre le titre et le data-bis */
 }
 
 dialog button {
