@@ -5,7 +5,42 @@
 
 .index-series{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:2rem 0 1rem}
 .index-series a{display:block;padding:1.4rem 1.6rem;border-radius:20px;background:#fff;text-decoration:none;transition:.2s all ease}
-.index-series a:hover{background:#94bdcd}
+/* --- 1. Style de base et animation commune --- */
+.index-series a {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.index-series a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+  transform: translateX(30px);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.index-series a:hover::after {
+  transform: translateX(0);
+  opacity: 0.5;
+}
+
+/* --- 2. Images spécifiques selon la série --- */
+.index-series a.cynefin::after {
+  background-image: url('https://i.imgur.com/R0RaSrS.png');
+}
+
+.index-series a.annwn::after {
+  background-image: url('https://i.imgur.com/A3pm8tk.png');
+}
 .index-series strong{display:block;font:600 1.3rem/1.2 var(--serif);color:var(--texte)}
 .index-series span{display:block;color:var(--discret);font-size:.95rem;margin-top:.2rem}
 .index-series em{display:block;margin-top:.5rem;font-style:normal;font-weight:600;color:var(--texte)}
