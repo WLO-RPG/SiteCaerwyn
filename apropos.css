@@ -1,0 +1,54 @@
+/* Styles propres à la page À propos (s'ajoute à style.css) */
+.apropos{max-width:1100px;width:100%;margin:0 auto;padding:4rem clamp(1rem,5vw,4rem) 3rem}
+.apropos section{padding-top:4.5rem}
+
+/* Titres en dégradé doré, comme sur les autres pages */
+.apropos h1,
+.apropos h2{font-family:var(--serif);font-weight:600;letter-spacing:-.02em;width:fit-content;background:-webkit-linear-gradient(300deg,#ffe7a9 0%,#c9981b 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.apropos h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.2;margin:0 0 1rem}
+.apropos h2{font-size:clamp(1.8rem,4vw,2.4rem);line-height:1.1;margin:0 0 .6rem}
+
+/* Présentation + portrait */
+.presentation{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:center}
+.presentation p{color:var(--discret);max-width:36em;margin:0 0 1rem}
+.presentation .lead{font:500 1.35rem/1.45 var(--serif)}
+.apropos .boutons{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.8rem}
+
+.portrait{margin:0}
+.portrait .visuel{display:block;aspect-ratio:4/5;border-radius:20px;background:var(--degrade);overflow:hidden}
+.portrait img{display:block;width:100%;height:100%;object-fit:cover}
+.portrait figcaption{padding:.6rem .4rem 0;color:var(--discret);font-size:.95rem}
+
+/* Parcours : une ligne dorée, comme un cours d'eau */
+.parcours{list-style:none;margin:2rem 0 0;padding:0 0 0 2rem;position:relative}
+.parcours::before{content:"";position:absolute;left:7px;top:.5rem;bottom:.5rem;width:2px;background:linear-gradient(to bottom,#ffe7a9,#c9981b)}
+.parcours li{position:relative;padding-bottom:1.8rem}
+.parcours li:last-child{padding-bottom:0}
+.parcours li::before{content:"";position:absolute;left:-2rem;top:.5rem;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid #c9981b}
+.parcours strong{display:block;font:600 1.2rem/1.3 var(--serif);color:var(--texte)}
+.parcours span{display:block;color:var(--discret);max-width:40em}
+
+/* Texte courant des sections */
+.texte-serie{color:var(--discret);max-width:40em;margin:0}
+.texte-serie em{font-style:normal;font-weight:600;color:var(--texte)}
+
+/* Cartes des séries (même effet de survol que sur la page Peintures) */
+.cartes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:2rem}
+.cartes a{position:relative;overflow:hidden;display:block;padding:1.4rem 1.6rem;border-radius:20px;background:#fff;text-decoration:none;transition:.2s all ease}
+.cartes a>*{position:relative;z-index:1}
+.cartes a::after{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background-repeat:no-repeat;background-position:right center;background-size:contain;transform:translateX(30px);opacity:0;transition:transform .4s cubic-bezier(.25,1,.5,1),opacity .4s ease;pointer-events:none}
+.cartes a:hover::after{transform:translateX(0);opacity:.5}
+.cartes a.cynefin::after{background-image:url('https://i.imgur.com/R0RaSrS.png')}
+.cartes a.annwn::after{background-image:url('https://i.imgur.com/A3pm8tk.png')}
+.cartes strong{display:block;font:600 1.3rem/1.2 var(--serif);color:var(--texte)}
+.cartes span{display:block;color:var(--discret);font-size:.95rem;margin-top:.2rem}
+.cartes em{display:block;margin-top:.5rem;font-style:normal;font-weight:600;color:var(--texte)}
+
+@media (max-width:760px){
+  .presentation{grid-template-columns:1fr;gap:2rem}
+  .portrait{order:-1;max-width:320px}
+  .apropos section{padding-top:3rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .cartes a,.cartes a::after{transition:none}
+}

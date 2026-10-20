@@ -46,7 +46,7 @@
 .index-series em{display:block;margin-top:.5rem;font-style:normal;font-weight:600;color:var(--texte)}
 
 .serie{padding-top:3rem}
-.serie h2{font:600 clamp(1.8rem,4vw,2.4rem)/1.1 var(--serif);margin:0 0 .4rem;background:-webkit-linear-gradient(300deg,#ffe7a9 0%,#c9981b 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;width:fit-content}
+.serie h2{font:600 clamp(1.8rem,4vw,2.4rem)/1.5 var(--serif);margin:0 0 .4rem;background:-webkit-linear-gradient(300deg,#ffe7a9 0%,#c9981b 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;width:fit-content}
 .serie .intro{color:var(--discret);margin:0 0 1.6rem}
 .introannwn{color:var(--annwngris);margin:0 0 1.6rem;}
 .serie .grille .tuile .visuel{border-radius:16px}

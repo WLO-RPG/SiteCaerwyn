@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact – Caerwyn Bevans</title>
+  <meta name="description"
+    content="Contacter Caerwyn Bevans pour une commande, une exposition ou une question sur une toile.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Karla:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+
+  <header class="site">
+    <a class="nom" href="index.html">Caerwyn Bevans</a>
+    <nav aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="expo.html">Expositions</a>
+      <a href="https://whatlurksoutside.forumactif.com/t75-caerwyn-thisaverageguy#165">Instagram</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="contact">
+
+      <div>
+        <h1>Contact</h1>
+        <p class="lead">Une commande, une exposition, une question sur une toile ? Écris à Caerwyn.</p>
+        <p class="note">Il répond en général sous quelques jours.</p>
+
+        <div class="moyens">
+          <div>
+            <strong>Mail</strong>
+            <span>caerwyn.bevans@gmail.com</span>
+          </div>
+          <a href="https://whatlurksoutside.forumactif.com/t75-caerwyn-thisaverageguy#165">
+            <strong>Instagram</strong>
+            <span>Réseau social principal du peintre</span>
+          </a>
+          <!-- <div>
+            <strong>Atelier</strong>
+            <span>Lanvorick, Cornouailles. Visites sur rendez-vous.</span>
+          </div> -->
+        </div>
+      </div>
+
+      <form class="formulaire" id="formulaire" novalidate>
+        <div class="champ">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" autocomplete="name" required>
+        </div>
+        <div class="champ">
+          <label for="email">Adresse e-mail</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+        <div class="champ">
+          <label for="sujet">Sujet</label>
+          <select id="sujet" name="sujet">
+            <option>Commande d'une toile</option>
+            <option>Exposition</option>
+            <option>Question sur une œuvre</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="champ">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="envoyer">Envoyer</button>
+        <p class="statut" id="statut" role="status" aria-live="polite"></p>
+      </form>
+
+    </div>
+  </main>
+
+  <footer>
+    Site fictif. Aucun message n'est réellement envoyé.
+  </footer>
+
+  <script>
+    /* Formulaire décoratif : rien n'est envoyé nulle part. */
+    (function () {
+      var form = document.getElementById('formulaire'), statut = document.getElementById('statut');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          statut.textContent = 'Il manque ton nom, une adresse valide ou ton message.';
+          form.reportValidity();
+          return;
+        }
+        form.reset();
+        statut.textContent = 'Message bien reçu. Caerwyn y répondra dès qu\u2019il aura posé ses pinceaux.';
+      });
+    })();
+  </script>
+</body>
+
+</html>
